@@ -1,0 +1,6 @@
+.git
+.gitignore
+to_install
+Dockerfile
+.dockerignore
+tests

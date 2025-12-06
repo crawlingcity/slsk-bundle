@@ -1,0 +1,47 @@
+/* Default styles from previous steps */
+#output {
+  height: 500px;
+  overflow-y: scroll;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  padding: 1rem;
+  white-space: pre-wrap; /* Wrap long lines */
+  word-wrap: break-word; /* Break long words */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.dark-mode .form-control {
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-color: #6c757d;
+}
+
+.dark-mode .form-control:focus {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.dark-mode .form-label,
+.dark-mode h1,
+.dark-mode h5 {
+  color: #f8f9fa;
+}
+
+.dark-mode #output {
+  background-color: #343a40;
+  border-color: #6c757d;
+}
+
+.dark-mode .card, .dark-mode .bg-light {
+    background-color: #343a40 !important;
+}
+
+.dark-mode hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
