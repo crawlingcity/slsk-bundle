@@ -9,7 +9,7 @@ COPY slsk-batchdl/ .
 RUN dotnet restore slsk-batchdl.sln
 
 # Build and publish the C# application for Linux
-RUN dotnet publish slsk-batchdl/slsk-batchdl.csproj -c Release -o /app/bin/Release/net6.0/ --runtime linux-arm64 --self-contained true
+RUN dotnet publish slsk-batchdl/slsk-batchdl.csproj -c Release -o /app/bin/Release/net6.0/ --runtime linux-x64 --self-contained true
 
 # Stage 2: Set up the Python GUI
 FROM python:3.9-slim
@@ -24,8 +24,14 @@ COPY slsk-batchdl-gui/ .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the built C# executable from the build stage
+# Copy all published files (executable + dependencies)
 COPY --from=build /app/bin/Release/net6.0/ ./
+
+# Create the downloads directory
+RUN mkdir -p /downloads
+
+# Change ownership of /app and downloads directory to user 1000
+RUN chown -R 1000:1000 /app /downloads
 
 # Expose the port for the GUI
 EXPOSE 8000

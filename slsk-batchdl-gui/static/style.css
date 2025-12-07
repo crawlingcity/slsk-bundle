@@ -6,8 +6,10 @@
   border: 1px solid #dee2e6;
   border-radius: .25rem;
   padding: 1rem;
-  white-space: pre-wrap; /* Wrap long lines */
-  word-wrap: break-word; /* Break long words */
+  white-space: pre-wrap;
+  /* Wrap long lines */
+  word-wrap: break-word;
+  /* Break long words */
 }
 
 /* Dark Mode Styles */
@@ -38,10 +40,65 @@ body.dark-mode {
   border-color: #6c757d;
 }
 
-.dark-mode .card, .dark-mode .bg-light {
-    background-color: #343a40 !important;
+.dark-mode .card,
+.dark-mode .bg-light {
+  background-color: #343a40 !important;
 }
 
 .dark-mode hr {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .modal-content {
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-color: #454d55;
+}
+
+.dark-mode .modal-header,
+.dark-mode .modal-footer {
+  border-color: #454d55;
+}
+
+.dark-mode .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.dark-mode .card {
+  background-color: #343a40;
+  color: #f8f9fa;
+  border-color: #454d55;
+}
+
+.dark-mode .card .text-muted {
+  color: #ced4da !important;
+}
+
+.dark-mode .card .small {
+  color: #adb5bd !important;
+}
+
+
+@keyframes flash-border {
+  0% {
+    border-color: #dee2e6;
+  }
+
+  50% {
+    border-color: #6c757d;
+  }
+
+  100% {
+    border-color: #dee2e6;
+  }
+}
+
+.running-border {
+  animation: flash-border 2s infinite;
+  border: 2px solid #dee2e6 !important;
+}
+
+.success-border {
+  border: 2px solid #198754 !important;
+  /* Bootstrap success green */
 }

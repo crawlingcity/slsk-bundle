@@ -1,10 +1,10 @@
-version: '3.8'
-
 services:
   slsk-batchdl-app:
     build: .
+    env_file:
+      - .env
     ports:
       - "8000:8000"
     volumes:
-      - ./downloads:/app/downloads
+      - /mnt/media/downloads/singles:/downloads
     user: "1000:1000"

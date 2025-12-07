@@ -980,7 +980,7 @@ public class DownloaderApplication
 
         while (!completeFolderTask.IsCompleted)
         {
-            if (Console.KeyAvailable && !Console.IsInputRedirected)
+            if (!Console.IsInputRedirected && Console.KeyAvailable)
             {
                 if (Console.ReadKey(true).Key == ConsoleKey.C)
                 {
